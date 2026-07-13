@@ -1,0 +1,25 @@
+# Local environment files (contains passwords/secrets, DO NOT upload to git)
+.env
+.env.local
+.env.*.local
+
+# Dependency directories
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Project specific temp/data files (optional, but recommended to keep out of Git if sensitive)
+*.xlsx
+*.csv
+*summary.txt
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log

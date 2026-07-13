@@ -1,0 +1,8 @@
+# Ignore local node packages and system files
+node_modules
+.git
+backend/node_modules
+frontend/node_modules
+docker-compose.yml
+Dockerfile
+.dockerignore
