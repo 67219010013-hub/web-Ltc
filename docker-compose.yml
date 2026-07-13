@@ -38,12 +38,11 @@ services:
   # 3. Frontend Web Server (Nginx)
   frontend:
     container_name: hospital_frontend
-    image: nginx:alpine
+    # 💡 สั่งให้บิลด์จากโฟลเดอร์ frontend แทนการดึงภาพสำเร็จรูป
+    build: ./frontend
     ports:
       - "${FRONTEND_PORT:-8001}:80"
-    volumes:
-      - ./frontend/index.html:/usr/share/nginx/html/index.html
-      - ./frontend/loeitech-logo.png:/usr/share/nginx/html/loeitech-logo.png
+    # ❌ ลบส่วน volumes เดิมออกไปทั้งหมดแล้ว
     networks:
       - app-network
     restart: always
