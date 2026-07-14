@@ -1591,7 +1591,7 @@
                     let headerRowIdx = -1;
                     for (let r = 0; r < Math.min(15, rows.length); r++) {
                         const row = rows[r];
-                        if (row && row.some(cell => String(cell).includes('รหัสประจำตัว'))) {
+                        if (row && Array.from(row).some(cell => cell != null && String(cell).includes('รหัสประจำตัว'))) {
                             headerRowIdx = r;
                             break;
                         }
@@ -1602,14 +1602,14 @@
                         return;
                     }
                     
-                    const headers = rows[headerRowIdx].map(h => String(h || '').trim());
+                    const headers = Array.from(rows[headerRowIdx]).map(h => String(h != null ? h : '').trim());
                     
-                    const colUsername = headers.findIndex(h => h.includes('รหัสประจำตัว'));
-                    const colPassword = headers.findIndex(h => h.includes('เลขประจำตัวประชาชน'));
-                    const colFullName = headers.findIndex(h => h.includes('ชื่อ - นามสกุล') || h.includes('ชื่อ-นามสกุล') || h === 'ชื่อ');
-                    const colClassGroup = headers.findIndex(h => h.includes('กลุ่มเรียน'));
-                    const colBirthdate = headers.findIndex(h => h.includes('เกิด') || h.includes('วันเกิด'));
-                    const colStatus = headers.findIndex(h => h.includes('สถานะ'));
+                    const colUsername = headers.findIndex(h => h && h.includes('รหัสประจำตัว'));
+                    const colPassword = headers.findIndex(h => h && h.includes('เลขประจำตัวประชาชน'));
+                    const colFullName = headers.findIndex(h => h && (h.includes('ชื่อ - นามสกุล') || h.includes('ชื่อ-นามสกุล') || h === 'ชื่อ'));
+                    const colClassGroup = headers.findIndex(h => h && h.includes('กลุ่มเรียน'));
+                    const colBirthdate = headers.findIndex(h => h && (h.includes('เกิด') || h.includes('วันเกิด')));
+                    const colStatus = headers.findIndex(h => h && h.includes('สถานะ'));
                     
                     if (colUsername === -1 || colPassword === -1) {
                         alert('ไม่พบคอลัมน์ "รหัสประจำตัว" หรือ "เลขประจำตัวประชาชน"');
@@ -1761,7 +1761,7 @@
                     let headerRowIdx = -1;
                     for (let r = 0; r < Math.min(15, rows.length); r++) {
                         const row = rows[r];
-                        if (row && row.some(cell => String(cell).includes('รหัสประจำตัว'))) {
+                        if (row && Array.from(row).some(cell => cell != null && String(cell).includes('รหัสประจำตัว'))) {
                             headerRowIdx = r;
                             break;
                         }
@@ -1772,14 +1772,14 @@
                         return;
                     }
                     
-                    const headers = rows[headerRowIdx].map(h => String(h || '').trim());
+                    const headers = Array.from(rows[headerRowIdx]).map(h => String(h != null ? h : '').trim());
                     
-                    const colUsername = headers.findIndex(h => h.includes('รหัสประจำตัว'));
-                    const colPassword = headers.findIndex(h => h.includes('เลขประจำตัวประชาชน'));
-                    const colFullName = headers.findIndex(h => h.includes('ชื่อ - นามสกุล') || h.includes('ชื่อ-นามสกุล') || h === 'ชื่อ');
-                    const colClassGroup = headers.findIndex(h => h.includes('กลุ่มเรียน'));
-                    const colBirthdate = headers.findIndex(h => h.includes('เกิด') || h.includes('วันเกิด'));
-                    const colStatus = headers.findIndex(h => h.includes('สถานะ'));
+                    const colUsername = headers.findIndex(h => h && h.includes('รหัสประจำตัว'));
+                    const colPassword = headers.findIndex(h => h && h.includes('เลขประจำตัวประชาชน'));
+                    const colFullName = headers.findIndex(h => h && (h.includes('ชื่อ - นามสกุล') || h.includes('ชื่อ-นามสกุล') || h === 'ชื่อ'));
+                    const colClassGroup = headers.findIndex(h => h && h.includes('กลุ่มเรียน'));
+                    const colBirthdate = headers.findIndex(h => h && (h.includes('เกิด') || h.includes('วันเกิด')));
+                    const colStatus = headers.findIndex(h => h && h.includes('สถานะ'));
                     
                     if (colUsername === -1 || colPassword === -1) {
                         alert('ไม่พบคอลัมน์ "รหัสประจำตัว" หรือ "เลขประจำตัวประชาชน"');
