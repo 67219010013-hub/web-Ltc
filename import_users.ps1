@@ -5,7 +5,7 @@
 # ============================================================
 
 $excelPath  = 'c:\Users\Korarak\Desktop\web-Ltc\20260706094903.xlsx'
-$apiUrl     = 'http://localhost:5000/api/users/import'
+$apiUrl     = 'http://192.168.10.202:5000/api/users/import'
 
 Write-Host "📂 กำลังเปิดไฟล์ Excel..." -ForegroundColor Cyan
 
